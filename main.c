@@ -1,9 +1,3 @@
-/*
- * main.c
- *
- *  Created on: Feb 25, 2017
- *      Author: Ram
- */
 #include <stdio.h>
 #include <stdlib.h>
 
