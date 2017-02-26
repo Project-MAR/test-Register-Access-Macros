@@ -10,7 +10,7 @@
 (volatile WDT_REGS *) (&WDT_REGISTER)
 ```
 
-When pointing "WDT_REGS" to WDT_REGISTER[0]. Trust all member in "WDT_REGS" will point to WDT_REGISTER[x] respectively. Trust, "WDT_REGISTER[4]" will never access because no pointer from WDT pointing to it.
+When pointing "WDT_REGS" to WDT_REGISTER[0]. Trust all member in "WDT_REGS" will point to WDT_REGISTER[x] respectively. Trust, "WDT_REGISTER[4]" will never access because no pointer from WDT_REGS pointing to it.
 
 ---
 
