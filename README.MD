@@ -17,7 +17,7 @@ When pointing "WDT_REGS" to WDT_REGISTER[0]. Trust all member in "WDT_REGS" will
 ```c
 #define WDT    ((volatile WDT_REGS *) (&WDT_REGISTER))
 ```
-Then we use a macro WDT to shotten a statement "(volatile WDT_REGS *) (&WDT_REGISTER)"
+Then we use a macro WDT to shorten a statement "(volatile WDT_REGS *) (&WDT_REGISTER)"
 
 ---
 
