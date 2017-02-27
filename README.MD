@@ -1,6 +1,6 @@
 ## Register-Accessed Macros
 
-- U32 WDT_REGISTER[4] act as target register to be access.
+- U32 WDT_REGISTER[4] a simulate for target register to be accessed.
 - struct WDT_REGS: a base register with their contained sub-register.
 - macro WDT: a macro for access register.
 
