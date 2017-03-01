@@ -10,7 +10,10 @@ typedef struct WDT_REGS_TAG
 	volatile U32 SR;
 }WDT_REGS;
 
-#define WDT    ((volatile WDT_REGS *) (&WDT_REGISTER))
+#define NAND_ADDR    *((volatile U8 *)(&WDT_REGISTER[4]))
+
+#define WDT          ((volatile WDT_REGS *) (&WDT_REGISTER))
+
 volatile U32 WDT_REGISTER[4] = {0x000001FF, 0xFFFFFFFF, 0x00001003, 0x40000000};
 
 int main(void)
