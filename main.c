@@ -10,17 +10,24 @@ typedef struct WDT_REGS_TAG
 	volatile U32 SR;
 }WDT_REGS;
 
-#define NAND_ADDR    *((volatile U8 *)(&WDT_REGISTER[4]))
+// pointer to physical address
+#define NAND_ADDR    *((volatile U32 *)(&WDT_REGISTER[4]))
 
+// struct that is place in the same address with the terget memory
 #define WDT          ((volatile WDT_REGS *) (&WDT_REGISTER))
 
-volatile U32 WDT_REGISTER[4] = {0x000001FF, 0xFFFFFFFF, 0x00001003, 0x40000000};
+// Target memory
+volatile U32 WDT_REGISTER[4] = {0x000001FF, 0xFFFFFFFF, 0x00001003, 0xF0F0F0F0};
+
 
 int main(void)
 {
+
+	printf("pointer to register 0x%08x\n\n",NAND_ADDR);
+
 	int i;
 	for (i=0; i<4; i++)
-		printf("Value in U32 WDT_REGISTER[i] : 0x%08x Address: 0x%08x\n",i ,WDT_REGISTER[i], &WDT_REGISTER[i]);
+		printf("Value in U32 WDT_REGISTER[%d] = 0x%08x, Address = 0x%08x\n",i ,WDT_REGISTER[i], &WDT_REGISTER[i]);
 
 	printf("CR: 0x%08x\n", WDT->CR);
 	printf("MR: 0x%08x\n", WDT->MR);
